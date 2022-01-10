@@ -1,0 +1,7 @@
+if (outcome == success) of /deployment=postgresql:read-resource
+    undeploy postgresql 
+    reload
+end-if
+
+echo
+echo Traitement OK

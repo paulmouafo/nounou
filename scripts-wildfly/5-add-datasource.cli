@@ -1,0 +1,12 @@
+data-source add \
+    --driver-name=postgresql \
+    --connection-url=jdbc:postgresql://localhost:5432/postgres \
+    --name=nounou \
+    --jndi-name=java:/jdbc/nounou \
+    --user-name=nounou \
+    --password=nounou
+
+reload
+
+echo
+echo Traitement OK

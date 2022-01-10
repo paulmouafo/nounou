@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     janvier. 2022                                                        
+
+     renommer-projet    
+                   
+     E. Amblard                                                                
+     ====================================================================== -->
+<project name="renommer-projet" default="renommer-projet">
+	
+	
+	<property name="new.name" value="nounous"/>
+	<property name="old.name" value="contacts"/>
+
+
+	<!-- ================================= 
+          target: renommer-projet              
+         ================================= -->
+	<target name="renommer-projet" description="Change project name">
+
+		<move todir="." >
+			<fileset dir="." />
+			<mapper type="regexp" from="(.*?)${old.name}(.*)" to="\1${new.name}\2" />
+		</move>
+		<move todir="." >
+			<fileset dir="." />
+			<mapper type="regexp" from="(.*)${old.name}(.*)" to="\1${new.name}\2" />
+		</move>
+		
+		<replace token="${old.name}" value="${new.name}" summary="yes">
+			<fileset dir="." >
+				<include name="**/.project"/>
+				<include name="**/.settings/**"/>
+				<include name="**/*.java"/>
+				<include name="**/*.properties"/>
+				<include name="**/*.xml"/>
+				<include name="**/*.xhtml"/>
+				<include name="**/*.bat"/>
+				<include name="**/*.cli"/>
+				<include name="**/*.sql"/>
+				<exclude name="renommer-projet.xml"/>
+				<exclude name="renommer-projet.bat"/>
+			</fileset>
+		</replace>
+
+	</target>
+
+	
+</project>

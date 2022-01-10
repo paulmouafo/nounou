@@ -1,0 +1,28 @@
+if (outcome == success) of /subsystem=undertow/application-security-domain=secu-web-nounou:read-resource
+    /subsystem=undertow/application-security-domain=secu-web-nounou:remove
+end-if
+
+if (outcome == success) of /subsystem=ejb3/application-security-domain=secu-ejb-nounou:read-resource
+    /subsystem=ejb3/application-security-domain=secu-ejb-nounou:remove
+end-if
+
+/subsystem=remoting/http-connector=http-remoting-connector:undefine-attribute( \
+	name=sasl-authentication-factory \ 
+)
+
+if (outcome == success) of /subsystem=elytron/sasl-authentication-factory=factory-nounou:read-resource
+    /subsystem=elytron/sasl-authentication-factory=factory-nounou:remove
+end-if
+
+if (outcome == success) of /subsystem=elytron/security-domain=domain-nounou:read-resource
+    /subsystem=elytron/security-domain=domain-nounou:remove
+end-if
+
+if (outcome == success) of /subsystem=elytron/jdbc-realm=realm-nounou:read-resource
+    /subsystem=elytron/jdbc-realm=realm-nounou:remove
+end-if
+
+reload
+
+echo
+echo Traitement OK

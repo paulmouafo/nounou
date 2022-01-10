@@ -1,0 +1,17 @@
+E:\Cours\I3\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\dao\IDaoPersonne.java
+E:\Cours\I3\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\service\standard\ServicePersonne.java
+E:\Cours\I3\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\dao\IDaoRole.java
+E:\Cours\I3\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\dao\IDaoTelephone.java
+E:\Cours\I3\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\dao\jpa\DaoCompte.java
+E:\Cours\I3\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\data\Compte.java
+E:\Cours\I3\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\dao\IDaoCategorie.java
+E:\Cours\I3\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\dao\jpa\DaoPersonne.java
+E:\Cours\I3\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\dao\IDaoCompte.java
+E:\Cours\I3\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\data\mapper\IMapperEjb.java
+E:\Cours\I3\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\dao\jpa\DaoCategorie.java
+E:\Cours\I3\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\data\Categorie.java
+E:\Cours\I3\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\data\Personne.java
+E:\Cours\I3\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\service\standard\ServiceConnexion.java
+E:\Cours\I3\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\service\standard\ServiceCompte.java
+E:\Cours\I3\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\data\Telephone.java
+E:\Cours\I3\Projet-JEE\nounou\nounou-ejb\src\main\java\nounou\ejb\service\standard\ServiceCategorie.java

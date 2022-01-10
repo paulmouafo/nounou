@@ -1,0 +1,42 @@
+/subsystem=elytron/jdbc-realm=realm-nounou:add( \
+	principal-query=[{ \
+		sql="SELECT c.MotDePasse, r.role FROM compte c INNER JOIN role r ON c.IdCompte = r.IdCompte WHERE c.Pseudo = ?", \
+		data-source=nounou, \
+		clear-password-mapper={password-index=1}, \
+		attribute-mapping=[{index=2,to=groups}] \
+	}] \
+)
+
+/subsystem=elytron/security-domain=domain-nounou:add( \
+	default-realm=realm-nounou, \
+	realms=[{realm=realm-nounou, \
+	role-decoder=groups-to-roles}], \
+	permission-mapper=default-permission-mapper \
+)
+
+/subsystem=elytron/sasl-authentication-factory=factory-nounou:add( \
+	sasl-server-factory=configured, \
+	security-domain=domain-nounou, \
+	mechanism-configurations=[{ \
+		mechanism-name=DIGEST-MD5, \
+		mechanism-realm-configurations=[{realm-name=realm-nounou}] \
+	}] \
+)
+
+/subsystem=remoting/http-connector=http-remoting-connector:write-attribute( \
+	name=sasl-authentication-factory, \
+	value=factory-nounou \
+)
+
+/subsystem=ejb3/application-security-domain=secu-ejb-nounou:add( \
+	security-domain=domain-nounou \
+)
+
+/subsystem=undertow/application-security-domain=secu-web-nounou:add( \
+	security-domain=domain-nounou \
+)
+
+reload
+
+echo
+echo Traitement OK

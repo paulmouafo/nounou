@@ -1,0 +1,12 @@
+nounou\commun\service\IServiceCategorie.class
+nounou\commun\dto\Roles.class
+nounou\commun\service\IServicePersonne.class
+nounou\commun\dto\DtoTelephone.class
+nounou\commun\exception\ExceptionPermission.class
+nounou\commun\exception\ExceptionAnomaly.class
+nounou\commun\service\IServiceConnexion.class
+nounou\commun\service\IServiceCompte.class
+nounou\commun\dto\DtoCategorie.class
+nounou\commun\dto\DtoPersonne.class
+nounou\commun\exception\ExceptionValidation.class
+nounou\commun\dto\DtoCompte.class
