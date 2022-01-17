@@ -1,0 +1,6 @@
+REFRESH_WORKSPACE_ON_STARTUP=true
+eclipse.preferences.version=1
+platformState=1629743207549
+quickStart=false
+tipsAndTricks=true
+unassociatedEditorStrategy=org.eclipse.ui.ide.systemEditorThenTextEditor
