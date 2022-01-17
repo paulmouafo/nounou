@@ -7,10 +7,12 @@ import org.mapstruct.MappingTarget;
 
 import nounou.commun.dto.DtoCategorie;
 import nounou.commun.dto.DtoCompte;
+import nounou.commun.dto.DtoEnfant;
 import nounou.commun.dto.DtoPersonne;
 import nounou.commun.dto.DtoTelephone;
 import nounou.jsf.data.Categorie;
 import nounou.jsf.data.Compte;
+import nounou.jsf.data.Enfant;
 import nounou.jsf.data.Personne;
 import nounou.jsf.data.Telephone;
 
@@ -59,5 +61,14 @@ public interface IMapper {
 	Telephone duplicate( Telephone source );
 
 	List<Telephone> duplicate( List<Telephone> source );
+
+	
+	// Enfant
+	
+	Enfant map(DtoEnfant dto);
+	
+	DtoEnfant map( Enfant source );
+	
+	Enfant duplicate( Enfant source );
 
 }

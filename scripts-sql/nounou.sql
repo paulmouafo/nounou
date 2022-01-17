@@ -89,7 +89,6 @@ CREATE TABLE  enfant(
 	nom               VARCHAR (255) NOT NULL ,
 	prenom            VARCHAR (255) NOT NULL ,
 	dateDeNaissance   DATE  NOT NULL ,
-	id                INT  NOT NULL ,
 	idSuivie          INT  NOT NULL  ,
 	CONSTRAINT enfant_PK PRIMARY KEY (idEnfant)
 )WITHOUT OIDS;
