@@ -18,7 +18,7 @@ import nounou.jsf.data.Telephone;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-01-17T14:52:36+0100",
+    date = "2022-01-17T15:09:56+0100",
     comments = "version: 1.4.2.Final, compiler: Eclipse JDT (IDE) 1.3.1300.v20210419-1022, environment: Java 15.0.2 (Oracle Corporation)"
 )
 @ApplicationScoped

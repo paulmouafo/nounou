@@ -162,5 +162,5 @@ VALUES (2, 'parent@3il.fr', 'parent', 'PARENT' );
 ---- Compte utilisateur
 --DROP USER  IF EXISTS  nounou;
 --CREATE USER  nounou  WITH PASSWORD 'nounou';
---GRANT ALL PRIVILEGES ON SCHEMA nounou TO nounou;
---GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA nounou TO nounou;
+GRANT ALL PRIVILEGES ON SCHEMA nounou TO nounou;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA nounou TO nounou;
