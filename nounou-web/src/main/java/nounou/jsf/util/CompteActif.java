@@ -14,7 +14,7 @@ import nounou.jsf.data.Compte;
 public class CompteActif extends Compte {
 	
 	public boolean isLoggedIn() {
-		return getPseudo() != null;
+		return getEmail() != null;
 	}	
 	
 	public boolean isUtilisateur() {

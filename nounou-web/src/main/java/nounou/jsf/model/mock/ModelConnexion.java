@@ -1,6 +1,6 @@
 package nounou.jsf.model.mock;
 
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.RequestScoped; 
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -44,7 +44,7 @@ public class ModelConnexion {
 
 		Compte compte = null;
 		for ( Compte item : données.getComptes() ) {
-			if ( item.getPseudo().equals( courant.getPseudo() )
+			if ( item.getEmail().equals( courant.getEmail() )
 					&& item.getMotDePasse().equals( courant.getMotDePasse()) ) {
 				compte = item;
 				break;
@@ -57,7 +57,7 @@ public class ModelConnexion {
 	        UtilJsf.messageInfo( "Connexion réussie" );
 	        
 	    	modelInfo.setTitre( "Bienvenue" );
-	    	modelInfo.setTexte( "Vous êtes connecté en tant que '" + compteActif.getPseudo() +"'.");
+	    	modelInfo.setTexte( "Vous êtes connecté en tant que '" + compteActif.getEmail() +"'.");
 
 		    return "info";
 

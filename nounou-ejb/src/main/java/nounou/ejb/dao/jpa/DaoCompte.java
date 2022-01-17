@@ -57,7 +57,7 @@ public class DaoCompte implements IDaoCompte {
 	@TransactionAttribute( NOT_SUPPORTED )
 	public List<Compte> listerTout() {
 		em.clear();
-		var jpql = "SELECT c FROM Compte c ORDER BY c.pseudo";
+		var jpql = "SELECT c FROM Compte c ORDER BY c.email";
 		var query = em.createQuery( jpql, Compte.class );
 		return query.getResultList();
 	}
@@ -65,10 +65,10 @@ public class DaoCompte implements IDaoCompte {
 
 	@Override
 	@TransactionAttribute( NOT_SUPPORTED )
-	public Compte validerAuthentification( String pseudo, String motDePasse )  {
-	    var jpql = "SELECT c FROM Compte c WHERE c.pseudo=:pseudo AND c.motDePasse = :motDePasse ";
+	public Compte validerAuthentification( String email, String motDePasse )  {
+	    var jpql = "SELECT c FROM Compte c WHERE c.email=:email AND c.motDePasse = :motDePasse ";
 	    var query = em.createQuery( jpql, Compte.class );
-	    query.setParameter( "pseudo", pseudo );
+	    query.setParameter( "email", email );
 	    query.setParameter( "motDePasse", motDePasse );
 	    try {
 	        return query.getSingleResult();
@@ -80,10 +80,10 @@ public class DaoCompte implements IDaoCompte {
 
 	@Override
 	@TransactionAttribute( NOT_SUPPORTED )
-	public boolean verifierUnicitePseudo( String pseudo, int idCompte )  {
-	    var jpql = "SELECT COUNT(c) FROM Compte c WHERE c.pseudo=:pseudo AND c.id <> :idCompte ";
+	public boolean verifierUniciteEmail( String email, int idCompte )  {
+	    var jpql = "SELECT COUNT(c) FROM Compte c WHERE c.email=:email AND c.id <> :idCompte ";
 	    var query = em.createQuery( jpql, Long.class );
-	    query.setParameter( "pseudo", pseudo );
+	    query.setParameter( "email", email );
 	    query.setParameter( "idCompte", idCompte );
         return query.getSingleResult() == 0;
 	}

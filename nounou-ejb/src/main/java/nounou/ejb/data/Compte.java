@@ -28,19 +28,14 @@ public class Compte  {
 	@Column( name = "idcompte")
 	private int			id;
 	
-	@Column( name = "pseudo")
-	private String		pseudo;
-	
 	@Column( name = "motdepasse")
 	private String		motDePasse;
 	
 	@Column( name = "email")
 	private String		email;
 	
-	@ElementCollection( fetch = EAGER )
-	@CollectionTable( name = "role", joinColumns = @JoinColumn( name = "idcompte" ) )
 	@Column( name = "role")
-	private List<String> roles = new ArrayList<>();	
+	private String role;	
 	
 	
 	// Constructeurs
@@ -48,11 +43,11 @@ public class Compte  {
 	public Compte() {
 	}
 
-	public Compte(int id, String pseudo, String motDePasse, String email) {
+	public Compte(int id, String email, String motDePasse, String role) {
 		this.id = id;
-		this.pseudo = pseudo;
-		this.motDePasse = motDePasse;
 		this.email = email;
+		this.motDePasse = motDePasse;
+		this.role = role;
 	}
 	
 		
@@ -64,18 +59,6 @@ public class Compte  {
 	
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public String getPseudo() {
-		return pseudo;
-	}
-
-	public void setPseudo(String pseudo) {
-		this.pseudo = pseudo;
-	}
-
-	public String getMotDePasse() {
-		return motDePasse;
 	}
 
 	public void setMotDePasse(String motDePasse) {
@@ -90,12 +73,12 @@ public class Compte  {
 		this.email = email;
 	}
 
-	public List<String> getRoles() {
-		return roles;
+	public String getRoles() {
+		return role;
 	}
 
-	public void setRoles(List<String> roles) {
-		this.roles = roles;
+	public void setRoles(String roles) {
+		this.role = role;
 	}
 
     

@@ -139,58 +139,45 @@ public class Donnees implements Serializable {
 		// Comptes
 		
 		Compte compte;
-		compte = new Compte( 1, "geek", "geek", "geek@3il.fr" );
-		compte.getRoles().add( Roles.ADMINISTRATEUR  );
-		compte.getRoles().add( Roles.UTILISATEUR  );
+		compte = new Compte( 1, "admin@3il.fr", "ADMIN");
 		mapComptes.put( compte.getId(), compte );
 
-		compte = new Compte(2, "chef", "chef", "chef@3il.fr");
-		compte.getRoles().add( Roles.UTILISATEUR  );
+		compte = new Compte( 2, "parent@3il.fr", "PARENT");
 		mapComptes.put( compte.getId(), compte );
-		
-		compte = new Compte( 3, "job", "job", "job@3il.fr" );
-		compte.getRoles().add( Roles.UTILISATEUR  );
-		mapComptes.put( compte.getId(), compte );
-
-		compte = new Compte(4, "_" + this.getClass().getPackage().getName(), "xxx", "xxx@3il.fr");
-		compte.getRoles().add( Roles.UTILISATEUR  );
-		mapComptes.put( compte.getId(), compte );
-
-		
-		// Catégories
-	
-		Categorie categorie;
-		categorie =  new Categorie( 1, "Ecrivains" );
-    	mapCategories.put( categorie.getId(), categorie );
-    	categorie =  new Categorie( 2, "Peintres" );
-    	mapCategories.put( categorie.getId(), categorie );
 
     	
     	// Personnes
     	
-    	Categorie categorie1 = mapCategories.get(1);
-
-        Personne personne;
-
-        personne = new Personne( 1, "VERLAINE", "Paul", categorie1 );
-        personne.getTelephones().add(new Telephone(31, "Portable", "06 33 33 33 33"));
-        personne.getTelephones().add(new Telephone(32, "Domicile", "05 55 33 33 33"));
-        personne.getTelephones().add(new Telephone(33, "Travail", "05 55 99 33 33"));
-        mapPersonnes.put(personne.getId(), personne);
-
-        personne = new Personne( 2, "HUGO", "Victor", categorie1 );
-        personne.getTelephones().add(new Telephone(11, "Portable", "06 11 11 11 11"));
-        personne.getTelephones().add(new Telephone(12, "Domicile", "05 55 11 11 11"));
-        personne.getTelephones().add(new Telephone(13, "Travail", "05 55 99 11 11"));
-        mapPersonnes.put(personne.getId(), personne);
-
-        personne = new Personne( 3, "TRIOLET", "Elsa", categorie1 );
-        personne.getTelephones().add(new Telephone(21, "Portable", "06 22 22 22 22"));
-        personne.getTelephones().add(new Telephone(22, "Domicile", "05 55 22 22 22"));
-        personne.getTelephones().add(new Telephone(23, "Travail", "05 55 99 22 22"));
-        mapPersonnes.put(personne.getId(), personne);
-        
-        dernierIdTelephone = 100;
+		
+		/*
+		 * Categorie categorie1 = mapCategories.get(1);
+		 * 
+		 * Personne personne;
+		 * 
+		 * personne = new Personne( 1, "VERLAINE", "Paul", categorie1 );
+		 * personne.getTelephones().add(new Telephone(31, "Portable",
+		 * "06 33 33 33 33")); personne.getTelephones().add(new Telephone(32,
+		 * "Domicile", "05 55 33 33 33")); personne.getTelephones().add(new
+		 * Telephone(33, "Travail", "05 55 99 33 33"));
+		 * mapPersonnes.put(personne.getId(), personne);
+		 * 
+		 * personne = new Personne( 2, "HUGO", "Victor", categorie1 );
+		 * personne.getTelephones().add(new Telephone(11, "Portable",
+		 * "06 11 11 11 11")); personne.getTelephones().add(new Telephone(12,
+		 * "Domicile", "05 55 11 11 11")); personne.getTelephones().add(new
+		 * Telephone(13, "Travail", "05 55 99 11 11"));
+		 * mapPersonnes.put(personne.getId(), personne);
+		 * 
+		 * personne = new Personne( 3, "TRIOLET", "Elsa", categorie1 );
+		 * personne.getTelephones().add(new Telephone(21, "Portable",
+		 * "06 22 22 22 22")); personne.getTelephones().add(new Telephone(22,
+		 * "Domicile", "05 55 22 22 22")); personne.getTelephones().add(new
+		 * Telephone(23, "Travail", "05 55 99 22 22"));
+		 * mapPersonnes.put(personne.getId(), personne);
+		 * 
+		 * dernierIdTelephone = 100;
+		 */
+		 
 	
 	}
 	

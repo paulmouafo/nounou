@@ -46,26 +46,26 @@ public class ModelConnexion {
 	
 	public String connect() {
 	    
-	    DtoCompte dto = serviceConnexion.sessionUtilisateurOuvrir( courant.getPseudo(), courant.getMotDePasse() );
+	    DtoCompte dto = serviceConnexion.sessionUtilisateurOuvrir( courant.getEmail(), courant.getMotDePasse() );
 	    
 	    if ( dto != null ){
 	    	
 		    try {
 			    ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
-				( (HttpServletRequest) ec.getRequest() ).login( courant.getPseudo(), courant.getMotDePasse() );
+				( (HttpServletRequest) ec.getRequest() ).login( courant.getEmail(), courant.getMotDePasse() );
 			} catch (ServletException e) {
 				throw new RuntimeException( e );
 			}
 
-	        compteActif.setPseudo( dto.getPseudo() );
-	        compteActif.setRoles( dto.getRoles() );
+	        compteActif.setEmail( dto.getEmail() );
+	        compteActif.setRole( dto.getRole() );
 	        
 	    	modelInfo.setTitre( "Bienvenue" );
-	    	modelInfo.setTexte( "Vous êtes connecté en tant que '" + courant.getPseudo() +"'.");
+	    	modelInfo.setTexte( "Vous êtes connecté en tant que '" + courant.getEmail() +"'.");
 		    return "info";
 
 	    } else {
-	        UtilJsf.messageError( "Pseudo ou mot de passe invalide." );
+	        UtilJsf.messageError( "Email ou mot de passe invalide." );
 	    	return null;
 	    }
 	}	

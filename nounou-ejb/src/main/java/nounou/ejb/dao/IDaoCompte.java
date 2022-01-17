@@ -17,8 +17,8 @@ public interface IDaoCompte {
 
 	List<Compte> listerTout();
 
-	Compte 		validerAuthentification( String pseudo, String motDePasse );
+	Compte 		validerAuthentification( String email, String motDePasse );
 
-	boolean 	verifierUnicitePseudo( String pseudo, int idCompte );
+	boolean 	verifierUniciteEmail( String email, int idCompte );
 
 }
