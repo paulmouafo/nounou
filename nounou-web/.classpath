@@ -1,50 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-  <classpathentry kind="src" path="src/test/java" output="target/test-classes" including="**/*.java"/>
-  <classpathentry kind="src" path="target/generated-test-sources/test-annotations" output="target/test-classes" including="**/*.java"/>
-  <classpathentry kind="src" path="src/test/resources" output="target/test-classes" excluding="**/*.java"/>
-  <classpathentry kind="src" path="src/main/java" including="**/*.java"/>
-  <classpathentry kind="src" path="target/generated-sources/annotations" including="**/*.java"/>
-  <classpathentry kind="src" path="src/main/resources" excluding="**/*.java"/>
-  <classpathentry kind="output" path="target/classes"/>
-  <classpathentry kind="var" path="M2_REPO/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar" sourcepath="M2_REPO/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar" sourcepath="M2_REPO/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final-sources.jar"/>
-  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-  <classpathentry kind="var" path="M2_REPO/jakarta/enterprise/jakarta.enterprise.cdi-api/2.0.2/jakarta.enterprise.cdi-api-2.0.2.jar" sourcepath="M2_REPO/jakarta/enterprise/jakarta.enterprise.cdi-api/2.0.2/jakarta.enterprise.cdi-api-2.0.2-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/jakarta/inject/jakarta.inject-api/1.0.5/jakarta.inject-api-1.0.5.jar" sourcepath="M2_REPO/jakarta/inject/jakarta.inject-api/1.0.5/jakarta.inject-api-1.0.5-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/hibernate/validator/hibernate-validator/6.0.22.Final/hibernate-validator-6.0.22.Final.jar" sourcepath="M2_REPO/org/hibernate/validator/hibernate-validator/6.0.22.Final/hibernate-validator-6.0.22.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/logging/jboss-logging/3.4.2.Final/jboss-logging-3.4.2.Final.jar" sourcepath="M2_REPO/org/jboss/logging/jboss-logging/3.4.2.Final/jboss-logging-3.4.2.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar" sourcepath="M2_REPO/com/fasterxml/classmate/1.5.1/classmate-1.5.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/jakarta/persistence/jakarta.persistence-api/2.2.3/jakarta.persistence-api-2.2.3.jar" sourcepath="M2_REPO/jakarta/persistence/jakarta.persistence-api/2.2.3/jakarta.persistence-api-2.2.3-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/spec/javax/faces/jboss-jsf-api_2.3_spec/3.1.0.SP01/jboss-jsf-api_2.3_spec-3.1.0.SP01.jar" sourcepath="M2_REPO/org/jboss/spec/javax/faces/jboss-jsf-api_2.3_spec/3.1.0.SP01/jboss-jsf-api_2.3_spec-3.1.0.SP01-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_2.1_spec/2.0.2.Final/jboss-jaxrs-api_2.1_spec-2.0.2.Final.jar" sourcepath="M2_REPO/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_2.1_spec/2.0.2.Final/jboss-jaxrs-api_2.1_spec-2.0.2.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/spec/javax/servlet/jboss-servlet-api_4.0_spec/2.0.0.Final/jboss-servlet-api_4.0_spec-2.0.0.Final.jar" sourcepath="M2_REPO/org/jboss/spec/javax/servlet/jboss-servlet-api_4.0_spec/2.0.0.Final/jboss-servlet-api_4.0_spec-2.0.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/spec/javax/ejb/jboss-ejb-api_3.2_spec/2.0.0.Final/jboss-ejb-api_3.2_spec-2.0.0.Final.jar" sourcepath="M2_REPO/org/jboss/spec/javax/ejb/jboss-ejb-api_3.2_spec/2.0.0.Final/jboss-ejb-api_3.2_spec-2.0.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/spec/javax/transaction/jboss-transaction-api_1.3_spec/2.0.0.Final/jboss-transaction-api_1.3_spec-2.0.0.Final.jar" sourcepath="M2_REPO/org/jboss/spec/javax/transaction/jboss-transaction-api_1.3_spec/2.0.0.Final/jboss-transaction-api_1.3_spec-2.0.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/junit/junit/4.13.1/junit-4.13.1.jar" sourcepath="M2_REPO/junit/junit/4.13.1/junit-4.13.1-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar" sourcepath="M2_REPO/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/junit/arquillian-junit-container/1.6.0.Final/arquillian-junit-container-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/junit/arquillian-junit-container/1.6.0.Final/arquillian-junit-container-1.6.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/junit/arquillian-junit-core/1.6.0.Final/arquillian-junit-core-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/junit/arquillian-junit-core/1.6.0.Final/arquillian-junit-core-1.6.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/test/arquillian-test-spi/1.6.0.Final/arquillian-test-spi-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/test/arquillian-test-spi/1.6.0.Final/arquillian-test-spi-1.6.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/core/arquillian-core-spi/1.6.0.Final/arquillian-core-spi-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/core/arquillian-core-spi/1.6.0.Final/arquillian-core-spi-1.6.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/core/arquillian-core-api/1.6.0.Final/arquillian-core-api-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/core/arquillian-core-api/1.6.0.Final/arquillian-core-api-1.6.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/test/arquillian-test-api/1.6.0.Final/arquillian-test-api-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/test/arquillian-test-api/1.6.0.Final/arquillian-test-api-1.6.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/container/arquillian-container-test-api/1.6.0.Final/arquillian-container-test-api-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/container/arquillian-container-test-api/1.6.0.Final/arquillian-container-test-api-1.6.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/shrinkwrap/shrinkwrap-api/1.2.6/shrinkwrap-api-1.2.6.jar" sourcepath="M2_REPO/org/jboss/shrinkwrap/shrinkwrap-api/1.2.6/shrinkwrap-api-1.2.6-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-base/2.0.0/shrinkwrap-descriptors-api-base-2.0.0.jar" sourcepath="M2_REPO/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-base/2.0.0/shrinkwrap-descriptors-api-base-2.0.0-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/container/arquillian-container-test-spi/1.6.0.Final/arquillian-container-test-spi-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/container/arquillian-container-test-spi/1.6.0.Final/arquillian-container-test-spi-1.6.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/container/arquillian-container-spi/1.6.0.Final/arquillian-container-spi-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/container/arquillian-container-spi/1.6.0.Final/arquillian-container-spi-1.6.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/config/arquillian-config-api/1.6.0.Final/arquillian-config-api-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/config/arquillian-config-api/1.6.0.Final/arquillian-config-api-1.6.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/config/arquillian-config-impl-base/1.6.0.Final/arquillian-config-impl-base-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/config/arquillian-config-impl-base/1.6.0.Final/arquillian-config-impl-base-1.6.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/config/arquillian-config-spi/1.6.0.Final/arquillian-config-spi-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/config/arquillian-config-spi/1.6.0.Final/arquillian-config-spi-1.6.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-spi/2.0.0/shrinkwrap-descriptors-spi-2.0.0.jar" sourcepath="M2_REPO/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-spi/2.0.0/shrinkwrap-descriptors-spi-2.0.0-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/core/arquillian-core-impl-base/1.6.0.Final/arquillian-core-impl-base-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/core/arquillian-core-impl-base/1.6.0.Final/arquillian-core-impl-base-1.6.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/test/arquillian-test-impl-base/1.6.0.Final/arquillian-test-impl-base-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/test/arquillian-test-impl-base/1.6.0.Final/arquillian-test-impl-base-1.6.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/container/arquillian-container-impl-base/1.6.0.Final/arquillian-container-impl-base-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/container/arquillian-container-impl-base/1.6.0.Final/arquillian-container-impl-base-1.6.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/container/arquillian-container-test-impl-base/1.6.0.Final/arquillian-container-test-impl-base-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/container/arquillian-container-test-impl-base/1.6.0.Final/arquillian-container-test-impl-base-1.6.0.Final-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/shrinkwrap/shrinkwrap-impl-base/1.2.6/shrinkwrap-impl-base-1.2.6.jar" sourcepath="M2_REPO/org/jboss/shrinkwrap/shrinkwrap-impl-base/1.2.6/shrinkwrap-impl-base-1.2.6-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/shrinkwrap/shrinkwrap-spi/1.2.6/shrinkwrap-spi-1.2.6.jar" sourcepath="M2_REPO/org/jboss/shrinkwrap/shrinkwrap-spi/1.2.6/shrinkwrap-spi-1.2.6-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/protocol/arquillian-protocol-servlet/1.6.0.Final/arquillian-protocol-servlet-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/protocol/arquillian-protocol-servlet/1.6.0.Final/arquillian-protocol-servlet-1.6.0.Final-sources.jar"/>
-  <classpathentry kind="src" path="/nounou-commun"/>
-  <classpathentry kind="var" path="M2_REPO/org/mapstruct/mapstruct/1.4.2.Final/mapstruct-1.4.2.Final.jar" sourcepath="M2_REPO/org/mapstruct/mapstruct/1.4.2.Final/mapstruct-1.4.2.Final-sources.jar"/>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="target/generated-sources/annotations">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="ignore_optional_problems" value="true"/>
+			<attribute name="m2e-apt" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar" sourcepath="M2_REPO/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final.jar" sourcepath="M2_REPO/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final-sources.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="var" path="M2_REPO/jakarta/enterprise/jakarta.enterprise.cdi-api/2.0.2/jakarta.enterprise.cdi-api-2.0.2.jar" sourcepath="M2_REPO/jakarta/enterprise/jakarta.enterprise.cdi-api/2.0.2/jakarta.enterprise.cdi-api-2.0.2-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/jakarta/inject/jakarta.inject-api/1.0.5/jakarta.inject-api-1.0.5.jar" sourcepath="M2_REPO/jakarta/inject/jakarta.inject-api/1.0.5/jakarta.inject-api-1.0.5-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/hibernate/validator/hibernate-validator/6.0.22.Final/hibernate-validator-6.0.22.Final.jar" sourcepath="M2_REPO/org/hibernate/validator/hibernate-validator/6.0.22.Final/hibernate-validator-6.0.22.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/logging/jboss-logging/3.4.2.Final/jboss-logging-3.4.2.Final.jar" sourcepath="M2_REPO/org/jboss/logging/jboss-logging/3.4.2.Final/jboss-logging-3.4.2.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar" sourcepath="M2_REPO/com/fasterxml/classmate/1.5.1/classmate-1.5.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/jakarta/persistence/jakarta.persistence-api/2.2.3/jakarta.persistence-api-2.2.3.jar" sourcepath="M2_REPO/jakarta/persistence/jakarta.persistence-api/2.2.3/jakarta.persistence-api-2.2.3-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/spec/javax/faces/jboss-jsf-api_2.3_spec/3.1.0.SP01/jboss-jsf-api_2.3_spec-3.1.0.SP01.jar" sourcepath="M2_REPO/org/jboss/spec/javax/faces/jboss-jsf-api_2.3_spec/3.1.0.SP01/jboss-jsf-api_2.3_spec-3.1.0.SP01-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_2.1_spec/2.0.2.Final/jboss-jaxrs-api_2.1_spec-2.0.2.Final.jar" sourcepath="M2_REPO/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_2.1_spec/2.0.2.Final/jboss-jaxrs-api_2.1_spec-2.0.2.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/spec/javax/servlet/jboss-servlet-api_4.0_spec/2.0.0.Final/jboss-servlet-api_4.0_spec-2.0.0.Final.jar" sourcepath="M2_REPO/org/jboss/spec/javax/servlet/jboss-servlet-api_4.0_spec/2.0.0.Final/jboss-servlet-api_4.0_spec-2.0.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/spec/javax/ejb/jboss-ejb-api_3.2_spec/2.0.0.Final/jboss-ejb-api_3.2_spec-2.0.0.Final.jar" sourcepath="M2_REPO/org/jboss/spec/javax/ejb/jboss-ejb-api_3.2_spec/2.0.0.Final/jboss-ejb-api_3.2_spec-2.0.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/spec/javax/transaction/jboss-transaction-api_1.3_spec/2.0.0.Final/jboss-transaction-api_1.3_spec-2.0.0.Final.jar" sourcepath="M2_REPO/org/jboss/spec/javax/transaction/jboss-transaction-api_1.3_spec/2.0.0.Final/jboss-transaction-api_1.3_spec-2.0.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/junit/junit/4.13.1/junit-4.13.1.jar" sourcepath="M2_REPO/junit/junit/4.13.1/junit-4.13.1-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar" sourcepath="M2_REPO/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/junit/arquillian-junit-container/1.6.0.Final/arquillian-junit-container-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/junit/arquillian-junit-container/1.6.0.Final/arquillian-junit-container-1.6.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/junit/arquillian-junit-core/1.6.0.Final/arquillian-junit-core-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/junit/arquillian-junit-core/1.6.0.Final/arquillian-junit-core-1.6.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/test/arquillian-test-spi/1.6.0.Final/arquillian-test-spi-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/test/arquillian-test-spi/1.6.0.Final/arquillian-test-spi-1.6.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/core/arquillian-core-spi/1.6.0.Final/arquillian-core-spi-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/core/arquillian-core-spi/1.6.0.Final/arquillian-core-spi-1.6.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/core/arquillian-core-api/1.6.0.Final/arquillian-core-api-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/core/arquillian-core-api/1.6.0.Final/arquillian-core-api-1.6.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/test/arquillian-test-api/1.6.0.Final/arquillian-test-api-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/test/arquillian-test-api/1.6.0.Final/arquillian-test-api-1.6.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/container/arquillian-container-test-api/1.6.0.Final/arquillian-container-test-api-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/container/arquillian-container-test-api/1.6.0.Final/arquillian-container-test-api-1.6.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/shrinkwrap/shrinkwrap-api/1.2.6/shrinkwrap-api-1.2.6.jar" sourcepath="M2_REPO/org/jboss/shrinkwrap/shrinkwrap-api/1.2.6/shrinkwrap-api-1.2.6-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-base/2.0.0/shrinkwrap-descriptors-api-base-2.0.0.jar" sourcepath="M2_REPO/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-base/2.0.0/shrinkwrap-descriptors-api-base-2.0.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/container/arquillian-container-test-spi/1.6.0.Final/arquillian-container-test-spi-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/container/arquillian-container-test-spi/1.6.0.Final/arquillian-container-test-spi-1.6.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/container/arquillian-container-spi/1.6.0.Final/arquillian-container-spi-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/container/arquillian-container-spi/1.6.0.Final/arquillian-container-spi-1.6.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/config/arquillian-config-api/1.6.0.Final/arquillian-config-api-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/config/arquillian-config-api/1.6.0.Final/arquillian-config-api-1.6.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/config/arquillian-config-impl-base/1.6.0.Final/arquillian-config-impl-base-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/config/arquillian-config-impl-base/1.6.0.Final/arquillian-config-impl-base-1.6.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/config/arquillian-config-spi/1.6.0.Final/arquillian-config-spi-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/config/arquillian-config-spi/1.6.0.Final/arquillian-config-spi-1.6.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-spi/2.0.0/shrinkwrap-descriptors-spi-2.0.0.jar" sourcepath="M2_REPO/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-spi/2.0.0/shrinkwrap-descriptors-spi-2.0.0-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/core/arquillian-core-impl-base/1.6.0.Final/arquillian-core-impl-base-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/core/arquillian-core-impl-base/1.6.0.Final/arquillian-core-impl-base-1.6.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/test/arquillian-test-impl-base/1.6.0.Final/arquillian-test-impl-base-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/test/arquillian-test-impl-base/1.6.0.Final/arquillian-test-impl-base-1.6.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/container/arquillian-container-impl-base/1.6.0.Final/arquillian-container-impl-base-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/container/arquillian-container-impl-base/1.6.0.Final/arquillian-container-impl-base-1.6.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/container/arquillian-container-test-impl-base/1.6.0.Final/arquillian-container-test-impl-base-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/container/arquillian-container-test-impl-base/1.6.0.Final/arquillian-container-test-impl-base-1.6.0.Final-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/shrinkwrap/shrinkwrap-impl-base/1.2.6/shrinkwrap-impl-base-1.2.6.jar" sourcepath="M2_REPO/org/jboss/shrinkwrap/shrinkwrap-impl-base/1.2.6/shrinkwrap-impl-base-1.2.6-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/shrinkwrap/shrinkwrap-spi/1.2.6/shrinkwrap-spi-1.2.6.jar" sourcepath="M2_REPO/org/jboss/shrinkwrap/shrinkwrap-spi/1.2.6/shrinkwrap-spi-1.2.6-sources.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jboss/arquillian/protocol/arquillian-protocol-servlet/1.6.0.Final/arquillian-protocol-servlet-1.6.0.Final.jar" sourcepath="M2_REPO/org/jboss/arquillian/protocol/arquillian-protocol-servlet/1.6.0.Final/arquillian-protocol-servlet-1.6.0.Final-sources.jar"/>
+	<classpathentry kind="src" path="/nounou-commun"/>
+	<classpathentry kind="var" path="M2_REPO/org/mapstruct/mapstruct/1.4.2.Final/mapstruct-1.4.2.Final.jar" sourcepath="M2_REPO/org/mapstruct/mapstruct/1.4.2.Final/mapstruct-1.4.2.Final-sources.jar"/>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="target/generated-test-sources/test-annotations">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="ignore_optional_problems" value="true"/>
+			<attribute name="m2e-apt" value="true"/>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>
