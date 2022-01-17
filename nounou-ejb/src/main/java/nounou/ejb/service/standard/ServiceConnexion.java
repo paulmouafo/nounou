@@ -26,8 +26,8 @@ public class ServiceConnexion implements IServiceConnexion {
 
 	@Override
 	@TransactionAttribute(NOT_SUPPORTED)
-	public DtoCompte sessionUtilisateurOuvrir(String pseudo, String motDePasse) {
-		DtoCompte compte = mapper.map(daoCompte.validerAuthentification(pseudo, motDePasse));
+	public DtoCompte sessionUtilisateurOuvrir(String email, String motDePasse) {
+		DtoCompte compte = mapper.map(daoCompte.validerAuthentification(email, motDePasse));
 		return compte;
 	}
 

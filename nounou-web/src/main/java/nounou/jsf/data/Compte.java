@@ -16,10 +16,6 @@ public class Compte implements Serializable  {
 	// Champs
 	
 	Integer		id;
-	
-	@NotBlank( message = "Le pseudo doit être renseigné")
-	@Size(max=25, message = "Valeur trop longue pour le pseuo : 25 car. maxi" )
-	private String		pseudo;
 
 	@NotBlank( message = "Le mot de passe doit être renseigné")
 	@Size(max=25, message = "Valeur trop longue pour le mot de passe : 25 car. maxi" )
@@ -30,7 +26,7 @@ public class Compte implements Serializable  {
 	@Email( message = "Adresse e-mail invalide" )
 	private String		email;
 	
-	private List<String> roles = new ArrayList<>();	
+	private String role;	
 
 	
 	// Constructeurs
@@ -38,10 +34,9 @@ public class Compte implements Serializable  {
 	public Compte() {
 	}
 	
-	public Compte(Integer id, String pseudo, String motDePasse, String email) {
+	public Compte(Integer id, String motDePasse, String email) {
 		super();
 		this.id = id;
-		this.pseudo = pseudo;
 		this.motDePasse = motDePasse;
 		this.email = email;
 	}
@@ -55,14 +50,6 @@ public class Compte implements Serializable  {
 	
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public String getPseudo() {
-		return pseudo;
-	}
-
-	public void setPseudo(String pseudo) {
-		this.pseudo = pseudo;
 	}
 
 	public String getMotDePasse() {
@@ -81,17 +68,17 @@ public class Compte implements Serializable  {
 		this.email = email;
 	}
 
-	public List<String> getRoles() {
-		return roles;
+	public String getRole() {
+		return role;
 	}
 
-	public void setRoles(List<String> roles) {
-		this.roles = roles;
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	
 	public boolean isInRole( String role ) {
-		return roles.contains( role );
+		return role.contains( role );
 	}
 
 	

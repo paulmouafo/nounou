@@ -1,6 +1,6 @@
 /subsystem=elytron/jdbc-realm=realm-nounou:add( \
 	principal-query=[{ \
-		sql="SELECT c.MotDePasse, r.role FROM compte c INNER JOIN role r ON c.IdCompte = r.IdCompte WHERE c.Pseudo = ?", \
+		sql="SELECT motdepasse, role FROM compte WHERE email = ?", \
 		data-source=nounou, \
 		clear-password-mapper={password-index=1}, \
 		attribute-mapping=[{index=2,to=groups}] \

@@ -13,13 +13,11 @@ public class DtoCompte implements Serializable  {
 	
 	private int			id;
 	
-	private String		pseudo;
-	
 	private String		motDePasse;
 	
 	private String		email;
 	
-	private List<String> roles = new ArrayList<>();
+	private String role;
 	
 	
 	// Constructeurs
@@ -27,11 +25,11 @@ public class DtoCompte implements Serializable  {
 	public DtoCompte() {
 	}
 
-	public DtoCompte(int id, String pseudo, String motDePasse, String email ) {
+	public DtoCompte(int id, String motDePasse, String email, String role ) {
 		this.id = id;
-		this.pseudo = pseudo;
 		this.motDePasse = motDePasse;
 		this.email = email;
+		this.role = role;
 	}
 	
 	
@@ -43,14 +41,6 @@ public class DtoCompte implements Serializable  {
 	
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public String getPseudo() {
-		return pseudo;
-	}
-
-	public void setPseudo(String pseudo) {
-		this.pseudo = pseudo;
 	}
 
 	public String getMotDePasse() {
@@ -69,23 +59,19 @@ public class DtoCompte implements Serializable  {
 		this.email = email;
 	}
 
-	public List<String> getRoles() {
-		return roles;
+	public String getRole() {
+		return role;
 	}
 
-	public void setRoles(List<String> roles) {
-		this.roles = roles;
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	
 	public boolean isInRole( String role ) {
 		
 		if ( role != null ) {
-			for ( String r : roles ) {
-				if ( r.equals(role) ) {
-					return true;
-				}
-			}
+			return true;
 		}
 		return false;
 	}

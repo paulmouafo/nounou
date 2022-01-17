@@ -5,7 +5,7 @@ import nounou.commun.dto.DtoCompte;
 
 public interface IServiceConnexion {
 
-	DtoCompte	sessionUtilisateurOuvrir( String pseudo, String motDePasse );
+	DtoCompte	sessionUtilisateurOuvrir( String email, String motDePasse );
 
 	void		sessionUtilisateurFermer();
 

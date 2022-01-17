@@ -72,14 +72,14 @@ public class ServiceCompte implements IServiceCompte {
 
 		StringBuilder message = new StringBuilder();
 
-		if (dtoCompte.getPseudo() == null || dtoCompte.getPseudo().isEmpty()) {
-			message.append("\nLe pseudo est absent.");
-		} else if (dtoCompte.getPseudo().length() < 3) {
-			message.append("\nLe pseudo est trop court.");
-		} else if (dtoCompte.getPseudo().length() > 25) {
-			message.append("\nLe pseudo est trop long.");
-		} else if (!daoCompte.verifierUnicitePseudo(dtoCompte.getPseudo(), dtoCompte.getId())) {
-			message.append("\nLe pseudo " + dtoCompte.getPseudo() + " est déjà utilisé.");
+		if (dtoCompte.getEmail() == null || dtoCompte.getEmail().isEmpty()) {
+			message.append("\nL'email est absent.");
+		} else if (dtoCompte.getEmail().length() < 3) {
+			message.append("\nL'email est trop court.");
+		} else if (dtoCompte.getEmail().length() > 25) {
+			message.append("\nL'email est trop long.");
+		} else if (!daoCompte.verifierUniciteEmail(dtoCompte.getEmail(), dtoCompte.getId())) {
+			message.append("\nL'email " + dtoCompte.getEmail() + " est déjà utilisé.");
 		}
 
 		if (dtoCompte.getMotDePasse() == null || dtoCompte.getMotDePasse().isEmpty()) {
