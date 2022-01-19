@@ -25,8 +25,8 @@
    <to-view-id>/pages/info.xhtml</to-view-id>
   </navigation-case>
   <navigation-case>
-   <from-outcome>enfants</from-outcome>
-   <to-view-id>/pages/admin/enfant/liste.xhtml</to-view-id>
+   <from-outcome>garde</from-outcome>
+   <to-view-id>/pages/admin/garde/liste.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
  <application/>

@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition template="/template/page-standard.xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:ui="http://java.sun.com/jsf/facelets">>
+
+     <ui:define name="titre">Liste des gardes</ui:define>
+
+    <ui:define name="contenu">
+
+	<h:form>
+
+		<h:dataTable styleClass="liste" 
+			value="#{modelGarde.liste}" var="item" 
+			rowClasses="impair, pair" columnClasses="center,left,center"
+		>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Id" />
+				</f:facet>
+				#{item.date}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Nom" />
+				</f:facet>
+				#{item.heureArrive}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Nom" />
+				</f:facet>
+				#{item.heureDepart}
+			</h:column>
+			
+			<h:selectBooleanCheckbox value="#{item.repas}"> </h:selectBooleanCheckbox>
+			
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Actions" />
+				</f:facet>
+				<h:button
+					outcome="formulaire?id=#{item.id}"
+					image="#{ resource['images:modifier.png'] }"
+					title="Modifier" 
+					styleClass="image-action"
+				/>
+				<h:commandButton action="#{modelGarde.supprimer(item)}" 
+					value="Supprimer" 
+					onclick="return confirm('Confirmez-vous la suppression ?')" 
+					image="#{ resource['images:supprimer.png'] }" 
+					title="Supprimer"
+					styleClass="image-action"
+				>
+					<f:ajax render="@form" execute="@form" />				
+				</h:commandButton>
+			</h:column>
+		</h:dataTable>
+		<br />
+		<h:button value="Ajouter" outcome="formulaire" />
+
+	</h:form>
+
+	</ui:define>
+
+</ui:composition>
