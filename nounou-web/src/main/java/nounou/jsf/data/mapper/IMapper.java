@@ -7,10 +7,12 @@ import org.mapstruct.MappingTarget;
 
 import nounou.commun.dto.DtoCategorie;
 import nounou.commun.dto.DtoCompte;
+import nounou.commun.dto.DtoGarde;
 import nounou.commun.dto.DtoPersonne;
 import nounou.commun.dto.DtoTelephone;
 import nounou.jsf.data.Categorie;
 import nounou.jsf.data.Compte;
+import nounou.jsf.data.Garde;
 import nounou.jsf.data.Personne;
 import nounou.jsf.data.Telephone;
 
@@ -28,6 +30,12 @@ public interface IMapper {
 	Compte duplicate( Compte source );
 
 	Compte update( @MappingTarget Compte target, Compte source );
+	
+	// Garde
+	
+	Garde    map( DtoGarde source );
+	
+	DtoGarde map( Garde source );
 
 
 	// Categorie
