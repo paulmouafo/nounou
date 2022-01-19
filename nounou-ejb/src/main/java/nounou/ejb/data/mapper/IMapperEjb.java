@@ -22,12 +22,6 @@ public interface IMapperEjb {
 
 	static final IMapperEjb INSTANCE = Mappers.getMapper(IMapperEjb.class);
 
-	// Enfant
-
-	Enfant map(DtoEnfant source);
-
-	DtoEnfant map(Enfant source);
-
 	// Compte
 
 	Compte map(DtoCompte source);
