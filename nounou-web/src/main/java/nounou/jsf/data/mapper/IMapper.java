@@ -31,12 +31,13 @@ public interface IMapper {
 
 	Compte update( @MappingTarget Compte target, Compte source );
 	
+	
 	// Garde
 	
-	Garde    map( DtoGarde source );
+	Garde map(DtoGarde dto);
 	
-	DtoGarde map( Garde source );
-
+	DtoGarde map(Garde courant);
+	
 
 	// Categorie
 	
@@ -67,5 +68,7 @@ public interface IMapper {
 	Telephone duplicate( Telephone source );
 
 	List<Telephone> duplicate( List<Telephone> source );
+
+
 
 }

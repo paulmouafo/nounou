@@ -13,7 +13,6 @@ import nounou.commun.dto.DtoGarde;
 import nounou.commun.exception.ExceptionValidation;
 import nounou.commun.service.IServiceGarde;
 import nounou.jsf.data.Garde;
-import nounou.jsf.data.Telephone;
 import nounou.jsf.data.mapper.IMapper;
 import nounou.jsf.util.UtilJsf;
 
