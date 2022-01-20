@@ -9,11 +9,11 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import nounou.commun.dto.DtoPersonne;
+import nounou.commun.dto.DtoContrat;
 import nounou.commun.exception.ExceptionValidation;
-import nounou.commun.service.IServicePersonne;
-import nounou.jsf.data.Personne;
-import nounou.jsf.data.Telephone;
+import nounou.commun.service.IServiceContrat;
+import nounou.jsf.data.Contrat;
+import nounou.jsf.data.Parent;
 import nounou.jsf.data.mapper.IMapper;
 import nounou.jsf.util.UtilJsf;
 
@@ -21,17 +21,17 @@ import nounou.jsf.util.UtilJsf;
 @SuppressWarnings("serial")
 @ViewScoped
 @Named
-public class ModelPersonne implements Serializable {
+public class ModelContrat implements Serializable {
 
 	
 	// Champs
 	
-	private List<Personne>		liste;
+	private List<Contrat>		liste;
 	
-	private Personne			courant;
+	private Contrat			courant;
 	
 	@EJB
-	private IServicePersonne	servicePersonne;
+	private IServiceContrat	serviceContrat;
 
 	@Inject
 	private IMapper				mapper;
@@ -39,19 +39,19 @@ public class ModelPersonne implements Serializable {
 	
 	// Getters 
 	
-	public List<Personne> getListe() {
+	public List<Contrat> getListe() {
 		if ( liste == null ) {
 			liste = new ArrayList<>();
-			for ( DtoPersonne dto : servicePersonne.listerTout() ) {
+			for ( DtoContrat dto : serviceContrat.listerTout() ) {
 				liste.add( mapper.map( dto ) );
 			}
 		}
 		return liste;
 	}
 
-	public Personne getCourant() {
+	public Contrat getCourant() {
 		if ( courant == null ) {
-			courant = new Personne();
+			courant = new Contrat();
 		}
 		return courant;
 	}
@@ -61,7 +61,7 @@ public class ModelPersonne implements Serializable {
 	
 	public String actualiserCourant() {
 		if ( courant != null ) {
-			DtoPersonne dto = servicePersonne.retrouver( courant.getId() ); 
+			DtoContrat dto = serviceContrat.retrouver( courant.getIdContrat() ); 
 			if ( dto == null ) {
 				UtilJsf.messageError( "La personne demandée n'existe pas" );
 				return "liste";
@@ -77,10 +77,10 @@ public class ModelPersonne implements Serializable {
 	
 	public String validerMiseAJour() {
 		try {
-			if ( courant.getId() == null) {
-				servicePersonne.inserer( mapper.map(courant) );
+			if ( courant.getIdContrat() == 0) {
+				serviceContrat.inserer( mapper.map(courant) );
 			} else {
-				servicePersonne.modifier( mapper.map(courant) );
+				serviceContrat.modifier( mapper.map(courant) );
 			}
 			UtilJsf.messageInfo( "Mise à jour effectuée avec succès." );
 			return "liste";
@@ -90,9 +90,9 @@ public class ModelPersonne implements Serializable {
 		}
 	}
 	
-	public String supprimer( Personne personne ) {
+	public String supprimer( Contrat personne ) {
 		try {
-			servicePersonne.supprimer( personne.getId() );
+			serviceContrat.supprimer( personne.getIdContrat() );
 			liste.remove(personne);
 			UtilJsf.messageInfo( "Suppression effectuée avec succès." );
 		} catch (ExceptionValidation e) {
@@ -102,20 +102,20 @@ public class ModelPersonne implements Serializable {
 	}
 	
 	
-	public String ajouterTelephone() {
-		courant.getTelephones().add( new Telephone() );
+	public String ajouterParent() {
+		courant.getParent().add( new Parent() );
 		return null;
 	}
 	
-	
-	public String supprimerTelephone( Telephone telephone ) {
-		for ( int i=0; i < courant.getTelephones().size(); ++i ) {
-			if ( courant.getTelephones().get(i) == telephone ) {
-				courant.getTelephones().remove( i );
-				break;
-			}
-		}
-		return null;
-	}
+//	
+//	public String supprimerParent( Telephone telephone ) {
+//		for ( int i=0; i < courant.getTelephones().size(); ++i ) {
+//			if ( courant.getTelephones().get(i) == telephone ) {
+//				courant.getTelephones().remove( i );
+//				break;
+//			}
+//		}
+//		return null;
+//	}
 	
 }

@@ -1,19 +1,16 @@
 package nounou.ejb.data;
 
-import static javax.persistence.GenerationType.IDENTITY;
-
-
+import static javax.persistence.GenerationType.IDENTITY;  
 
 import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-
-
 
 
 @Entity
@@ -23,9 +20,9 @@ public class Assistante {
 
 	// Champs
 	@Id
-	@GeneratedValue( strategy = IDENTITY )
+	@GeneratedValue( strategy = GenerationType.IDENTITY )
 	@Column( name = "idassistante" )
-	private Integer			idAssistante;
+	private int			idAssistante;
 	
 	
 	private String			nom;
@@ -39,6 +36,9 @@ public class Assistante {
 	
 	private int	telephones ;
 	
+	@OneToOne
+	private Compte compte;
+	
 	
 
 	public Assistante() {		
@@ -46,24 +46,25 @@ public class Assistante {
 
 
 
-	public Assistante(Integer idAssistante,String nom,String prenom,String email,int telephones) {
+	public Assistante(int idAssistante,String nom,String prenom,String email,int telephones, Compte compte) {
 		super();
 		this.idAssistante = idAssistante;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
 		this.telephones = telephones;
+		this.compte = compte;
 	}
 
 
 
-	public Integer getIdAssistante() {
+	public int getIdAssistante() {
 		return idAssistante;
 	}
 
 
 
-	public void setIdAssistante(Integer idAssistante) {
+	public void setIdAssistante(int idAssistante) {
 		this.idAssistante = idAssistante;
 	}
 
@@ -113,6 +114,18 @@ public class Assistante {
 
 	public void setTelephones(int telephones) {
 		this.telephones = telephones;
+	}
+
+
+
+	public Compte getCompte() {
+		return compte;
+	}
+
+
+
+	public void setCompte(Compte compte) {
+		this.compte = compte;
 	}
 
 

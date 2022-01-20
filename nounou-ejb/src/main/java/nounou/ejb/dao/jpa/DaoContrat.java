@@ -1,6 +1,6 @@
 package nounou.ejb.dao.jpa;
 
-import static javax.ejb.TransactionAttributeType.MANDATORY; 
+import static javax.ejb.TransactionAttributeType.MANDATORY;
 import static javax.ejb.TransactionAttributeType.NOT_SUPPORTED;
 
 import java.util.HashMap;
@@ -12,57 +12,58 @@ import javax.ejb.TransactionAttribute;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import nounou.ejb.dao.IDaoAssistante;
-import nounou.ejb.data.Assistante;
+import nounou.ejb.dao.IDaoContrat;
+import nounou.ejb.data.Contrat;
 
 
 @Stateless
 @Local
 @TransactionAttribute( MANDATORY )
-public class DaoAssistante implements IDaoAssistante {
+public class DaoContrat implements IDaoContrat {
 	
 	// Champs
 	
-	@PersistenceContext(unitName = "nounou")
+	@PersistenceContext
 	private EntityManager	em;
 
 	
 	// Actions
 	
 	@Override
-	public int inserer(Assistante assistante) {
-		em.persist(assistante);
+	public int inserer(Contrat contrat) {
+		em.persist(contrat);
 		em.flush();
-		return assistante.getIdAssistante();
+		return contrat.getIdContrat();
 	}
 
 	@Override
-	public void modifier(Assistante assistante) {
-		em.merge( assistante );
+	public void modifier(Contrat contrat) {
+		em.merge( contrat );
 	}
 
 	@Override
-	public void supprimer(int idAssistante) {
-		em.remove( retrouver(idAssistante) );
+	public void supprimer(int idContrat) {
+		em.remove( retrouver(idContrat) );
 	}
 
 	@Override
 	@TransactionAttribute( NOT_SUPPORTED )
-	public Assistante retrouver(int idAssistante) {
-		var graph = em.createEntityGraph( Assistante.class );
-		graph.addAttributeNodes( "categorie" );
-		graph.addAttributeNodes( "telephones" );
+	public Contrat retrouver(int idContrat) {
+		var graph = em.createEntityGraph( Contrat.class );
+		graph.addAttributeNodes( "parent" );
+		graph.addAttributeNodes( "garde" );
+		graph.addAttributeNodes( "assistante" );
 		var props = new HashMap<String, Object>();
 		props.put( "javax.persistence.loadgraph", graph );
-		return em.find( Assistante.class, idAssistante, props );
+		return em.find( Contrat.class, idContrat, props );
 	}
 
 	@Override
 	@TransactionAttribute( NOT_SUPPORTED )
-	public List<Assistante> listerTout() {
+	public List<Contrat> listerTout() {
 		em.clear();
-		var jpql = "SELECT a FROM Assistante a ORDER BY a.nom, a.prenom";
-		var query = em.createQuery( jpql, Assistante.class );
+		var jpql = "SELECT c FROM Contrat c ORDER BY c.dateDeDebut";
+		var query = em.createQuery( jpql, Contrat.class );
 		return query.getResultList();
 	}
 
@@ -70,7 +71,7 @@ public class DaoAssistante implements IDaoAssistante {
 //	@Override
 //	@TransactionAttribute( NOT_SUPPORTED )
 //	public int compterPourCategorie(int idCategorie) {
-//		var jpql = "SELECT COUNT(p) FROM Assistante p WHERE p.categorie.id = :idCategorie";
+//		var jpql = "SELECT COUNT(p) FROM Contrat p WHERE p.categorie.id = :idCategorie";
 //		var query = em.createQuery( jpql, Long.class );
 //		query.setParameter( "idCategorie", idCategorie );
 //		return query.getSingleResult().intValue();

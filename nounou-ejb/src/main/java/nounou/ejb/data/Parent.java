@@ -1,20 +1,27 @@
 package nounou.ejb.data;
 
-import java.io.Serializable; 
 
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 
 @SuppressWarnings("serial")
 @Entity
+@Table( name = "parent"  )
 public class Parent {
 
 
 	// Champs
 	@Id
+	@GeneratedValue( strategy = GenerationType.IDENTITY)
+	@Column( name = "idparent")
 	private int			idParent;
 	
 	private String			nom;
@@ -25,23 +32,21 @@ public class Parent {
 	
 	private int	telephones ;
 	
-	// private Compte compte;
+	@OneToOne
+	private Compte compte;
 	
-	
-
 	public Parent() {
 		
 	}
 
-
-
-	public Parent(Integer idParent, String nom, String prenom, String adresse, int telephones) {
+	public Parent(Integer idParent, String nom, String prenom, String adresse, int telephones, Compte compte) {
 		super();
 		this.idParent = idParent;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adresse = adresse;
 		this.telephones = telephones;
+		this.compte = compte;
 	}
 
 
@@ -102,6 +107,17 @@ public class Parent {
 
 	public void setTelephones(int telephones) {
 		this.telephones = telephones;
+	}
+
+
+	public Compte getCompte() {
+		return compte;
+	}
+
+
+
+	public void setCompte(Compte compte) {
+		this.compte = compte;
 	}
 
 

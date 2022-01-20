@@ -1,6 +1,5 @@
 package nounou.ejb.service.standard;
 
-import static nounou.commun.dto.Roles.ADMINISTRATEUR;
 import static javax.ejb.TransactionAttributeType.NOT_SUPPORTED;
 
 import java.util.ArrayList;
@@ -21,7 +20,6 @@ import nounou.ejb.data.mapper.IMapperEjb;
 
 @Stateless
 @Remote
-@RolesAllowed(ADMINISTRATEUR)
 public class ServiceCompte implements IServiceCompte {
 
 	// Champs

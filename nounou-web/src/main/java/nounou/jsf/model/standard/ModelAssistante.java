@@ -1,6 +1,6 @@
 package nounou.jsf.model.standard;
 
-import java.io.Serializable;
+import java.io.Serializable; 
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +13,6 @@ import nounou.commun.dto.DtoAssistante;
 import nounou.commun.exception.ExceptionValidation;
 import nounou.commun.service.IServiceAssistante;
 import nounou.jsf.data.Assistante;
-import nounou.jsf.data.Telephone;
 import nounou.jsf.data.mapper.IMapper;
 import nounou.jsf.util.UtilJsf;
 

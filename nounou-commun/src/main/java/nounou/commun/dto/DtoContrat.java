@@ -1,18 +1,16 @@
-package nounou.jsf.data;
+package nounou.commun.dto;
 
-import java.io.Serializable;
+import java.io.Serializable; 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Objects;
-
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 @SuppressWarnings("serial")
-public class Contrat implements Serializable {
-
+public class DtoContrat implements Serializable {
+	
+	
 	// Champs
+	
 	private int idContrat;
 
 	private String nomEnfant;
@@ -23,19 +21,19 @@ public class Contrat implements Serializable {
 	private float tarifHoraire;
 	private float indemniteDentretien;
 	private float indemniteDeRepas;
-	private List<Parent> parent;
-	private Garde garde;
-	private Assistante assistante;
-
-	public Contrat() {
-
+	private List<DtoParent> parent = new ArrayList<DtoParent>();
+	private DtoGarde garde;
+	
+	
+	// Constructeurs
+	
+	public DtoContrat() {
 	}
 
-	
 
-	public Contrat(int idContrat, String nomEnfant, String prenomEnfant, Date dateDeNaissance, Date dateDeDebut,
-			Date dateDeFin, float tarifHoraire, float indemniteDentretien, float indemniteDeRepas, List<Parent> parent,
-			Garde garde, Assistante assistante) {
+	public DtoContrat(int idContrat, String nomEnfant, String prenomEnfant, Date dateDeNaissance, Date dateDeDebut,
+			Date dateDeFin, float tarifHoraire, float indemniteDentretien, float indemniteDeRepas,
+			List<DtoParent> parent, DtoGarde garde) {
 		super();
 		this.idContrat = idContrat;
 		this.nomEnfant = nomEnfant;
@@ -48,15 +46,12 @@ public class Contrat implements Serializable {
 		this.indemniteDeRepas = indemniteDeRepas;
 		this.parent = parent;
 		this.garde = garde;
-		this.assistante = assistante;
 	}
 
-	
 
 	public int getIdContrat() {
 		return idContrat;
 	}
-
 
 
 	public void setIdContrat(int idContrat) {
@@ -64,11 +59,9 @@ public class Contrat implements Serializable {
 	}
 
 
-
 	public String getNomEnfant() {
 		return nomEnfant;
 	}
-
 
 
 	public void setNomEnfant(String nomEnfant) {
@@ -76,11 +69,9 @@ public class Contrat implements Serializable {
 	}
 
 
-
 	public String getPrenomEnfant() {
 		return prenomEnfant;
 	}
-
 
 
 	public void setPrenomEnfant(String prenomEnfant) {
@@ -88,11 +79,9 @@ public class Contrat implements Serializable {
 	}
 
 
-
 	public Date getDateDeNaissance() {
 		return dateDeNaissance;
 	}
-
 
 
 	public void setDateDeNaissance(Date dateDeNaissance) {
@@ -100,11 +89,9 @@ public class Contrat implements Serializable {
 	}
 
 
-
 	public Date getDateDeDebut() {
 		return dateDeDebut;
 	}
-
 
 
 	public void setDateDeDebut(Date dateDeDebut) {
@@ -112,11 +99,9 @@ public class Contrat implements Serializable {
 	}
 
 
-
 	public Date getDateDeFin() {
 		return dateDeFin;
 	}
-
 
 
 	public void setDateDeFin(Date dateDeFin) {
@@ -124,11 +109,9 @@ public class Contrat implements Serializable {
 	}
 
 
-
 	public float getTarifHoraire() {
 		return tarifHoraire;
 	}
-
 
 
 	public void setTarifHoraire(float tarifHoraire) {
@@ -136,11 +119,9 @@ public class Contrat implements Serializable {
 	}
 
 
-
 	public float getIndemniteDentretien() {
 		return indemniteDentretien;
 	}
-
 
 
 	public void setIndemniteDentretien(float indemniteDentretien) {
@@ -148,11 +129,9 @@ public class Contrat implements Serializable {
 	}
 
 
-
 	public float getIndemniteDeRepas() {
 		return indemniteDeRepas;
 	}
-
 
 
 	public void setIndemniteDeRepas(float indemniteDeRepas) {
@@ -160,60 +139,25 @@ public class Contrat implements Serializable {
 	}
 
 
-
-	public List<Parent> getParent() {
+	public List<DtoParent> getParent() {
 		return parent;
 	}
 
 
-
-	public void setParent(List<Parent> parent) {
+	public void setParent(List<DtoParent> parent) {
 		this.parent = parent;
 	}
 
 
-
-	public Garde getGarde() {
+	public DtoGarde getGarde() {
 		return garde;
 	}
 
 
-
-	public void setGarde(Garde garde) {
+	public void setGarde(DtoGarde garde) {
 		this.garde = garde;
 	}
 
-
-
-	public Assistante getAssistante() {
-		return assistante;
-	}
-
-
-
-	public void setAssistante(Assistante assistante) {
-		this.assistante = assistante;
-	}
-
-
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(idContrat);
-	}
-
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Contrat other = (Contrat) obj;
-		return idContrat == other.idContrat;
-	}
+	
 
 }

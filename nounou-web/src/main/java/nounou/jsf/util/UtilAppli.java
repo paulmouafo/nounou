@@ -1,12 +1,12 @@
 package nounou.jsf.util;
 
-import java.util.Collection;
+import java.util.Collection; 
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
 import javax.inject.Named;
 
-import nounou.commun.dto.Roles;
+// import nounou.commun.dto.Roles;
 
 
 @ApplicationScoped
@@ -14,16 +14,16 @@ import nounou.commun.dto.Roles;
 public class UtilAppli {
 	
 	
-	@Produces
-	@ApplicationScoped
-	@Named( "roles" )
-	public Collection<String> getRoles() {
-		return Roles.getRoles();
-	}
-
-	public String getLibelléDeRole( String role )  {
-		return Roles.getLibellé( role );
-	}
+//	@Produces
+//	@ApplicationScoped
+//	@Named( "roles" )
+//	public Collection<String> getRoles() {
+//		return Roles.getRoles();
+//	}
+//
+//	public String getLibelléDeRole( String role )  {
+//		return Roles.getLibellé( role );
+//	}
 	
 	
 	

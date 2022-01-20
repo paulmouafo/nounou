@@ -1,18 +1,30 @@
-package nounou.jsf.data;
+package nounou.ejb.data;
 
-import java.io.Serializable;
+import java.io.Serializable;  
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @SuppressWarnings("serial")
+@Entity
+@Table(name = "contrat") 
 public class Contrat implements Serializable {
 
 	// Champs
+	@Id
+	@GeneratedValue( strategy = GenerationType.IDENTITY)
+	@Column( name = "idcontrat")
 	private int idContrat;
 
 	private String nomEnfant;
@@ -23,8 +35,14 @@ public class Contrat implements Serializable {
 	private float tarifHoraire;
 	private float indemniteDentretien;
 	private float indemniteDeRepas;
+	
+	@OneToMany (cascade = CascadeType.ALL)
 	private List<Parent> parent;
+
+	
 	private Garde garde;
+	
+	
 	private Assistante assistante;
 
 	public Contrat() {
