@@ -28,6 +28,10 @@
    <from-outcome>garde</from-outcome>
    <to-view-id>/pages/admin/garde/liste.xhtml</to-view-id>
   </navigation-case>
+  <navigation-case>
+   <from-outcome>parent</from-outcome>
+   <to-view-id>/pages/admin/parent/liste.xhtml</to-view-id>
+  </navigation-case>
  </navigation-rule>
  <application/>
 </faces-config>

@@ -1,6 +1,6 @@
 package nounou.ejb.data.mapper;
 
-import org.mapstruct.AfterMapping;
+import org.mapstruct.AfterMapping; 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
@@ -9,11 +9,13 @@ import org.mapstruct.factory.Mappers;
 import nounou.commun.dto.DtoCategorie;
 import nounou.commun.dto.DtoCompte;
 import nounou.commun.dto.DtoGarde;
+import nounou.commun.dto.DtoParent;
 import nounou.commun.dto.DtoPersonne;
 import nounou.commun.dto.DtoTelephone;
 import nounou.ejb.data.Categorie;
 import nounou.ejb.data.Compte;
 import nounou.ejb.data.Garde;
+import nounou.ejb.data.Parent;
 import nounou.ejb.data.Personne;
 import nounou.ejb.data.Telephone;
 
@@ -29,7 +31,22 @@ public interface IMapperEjb {
 	Compte map( DtoCompte source );
 	
 	DtoCompte map( Compte source );
+	
 
+	// Parent
+
+	Parent map( DtoParent source );
+	
+	DtoParent map( Parent source );
+
+    // Garde 
+    
+	Garde map(DtoGarde dtoGarde);
+
+	DtoGarde mapMinimal(Garde garde);
+
+	DtoGarde map(Garde garde);
+	
 	
 	// Categorie
 	
@@ -40,14 +57,15 @@ public interface IMapperEjb {
 	
 	// Personne
 	
+	DtoPersonne mapMinimal( Personne source );
+	
 	Personne map( DtoPersonne source );
 	
 	DtoPersonne map( Personne source );
 
-	@Mapping( target="categorie", ignore = true )
-	@Mapping( target="telephones", ignore = true )
-	DtoPersonne mapMinimal( Personne source );
 	
+//	@Mapping( target="categorie", ignore = true )
+//	@Mapping( target="telephones", ignore = true )
 	
 	// Telephone
 	
@@ -66,10 +84,6 @@ public interface IMapperEjb {
         }
     }
 
-	Garde map(DtoGarde dtoGarde);
-
-	DtoGarde mapMinimal(Garde garde);
-
-	DtoGarde map(Garde garde);	
+	DtoParent mapMinimal(Parent parent);	
 	
 }
