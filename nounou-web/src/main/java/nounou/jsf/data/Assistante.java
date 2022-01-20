@@ -17,7 +17,7 @@ public class Assistante implements Serializable {
 
 	// Champs
 	
-	private Integer			idAssistante;
+	private int			idAssistante;
 	
 	@NotBlank( message = "Le nom doit être renseigné")
 	@Size(max=25, message = "Valeur trop longue pour le nom : 25 car. maxi" )
@@ -42,7 +42,7 @@ public class Assistante implements Serializable {
 
 
 
-	public Assistante(Integer idAssistante,String nom,String prenom,String email,int telephones) {
+	public Assistante(int idAssistante,String nom,String prenom,String email,int telephones) {
 		super();
 		this.idAssistante = idAssistante;
 		this.nom = nom;
@@ -51,74 +51,50 @@ public class Assistante implements Serializable {
 		this.telephones = telephones;
 	}
 
-
-
-	public Integer getIdAssistante() {
+	public int getIdAssistante() {
 		return idAssistante;
 	}
 
-
-
-	public void setIdAssistante(Integer idAssistante) {
+	public void setIdAssistante(int idAssistante) {
 		this.idAssistante = idAssistante;
 	}
-
-
-
+	
 	public String getNom() {
 		return nom;
 	}
-
-
 
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
 
-
-
 	public String getPrenom() {
 		return prenom;
 	}
-
-
 
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
 
-
-
 	public String getEmail() {
 		return email;
 	}
-
-
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-
-
 	public int getTelephones() {
 		return telephones;
 	}
-
-
 
 	public void setTelephones(int telephones) {
 		this.telephones = telephones;
 	}
 
-
-
 	@Override
 	public int hashCode() {
 		return Objects.hash(idAssistante);
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -131,14 +107,6 @@ public class Assistante implements Serializable {
 		Assistante other = (Assistante) obj;
 		return Objects.equals(idAssistante, other.idAssistante);
 	}
-	
-	
-	
-
-
-
-
-
 
 
 }

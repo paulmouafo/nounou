@@ -5,12 +5,14 @@ import java.util.List;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 
+import nounou.commun.dto.DtoAssistante;
 import nounou.commun.dto.DtoCategorie;
 import nounou.commun.dto.DtoCompte;
 import nounou.commun.dto.DtoGarde;
 import nounou.commun.dto.DtoParent;
 import nounou.commun.dto.DtoPersonne;
 import nounou.commun.dto.DtoTelephone;
+import nounou.jsf.data.Assistante;
 import nounou.jsf.data.Categorie;
 import nounou.jsf.data.Compte;
 import nounou.jsf.data.Garde;
@@ -70,6 +72,11 @@ public interface IMapper {
 	Telephone duplicate( Telephone source );
 
 	List<Telephone> duplicate( List<Telephone> source );
+
+
+	Assistante map(DtoAssistante dto);
+
+	DtoAssistante map(Assistante courant);
 
 	Parent map(DtoParent dto);
 

@@ -17,6 +17,6 @@ public interface IDaoAssistante {
 
 	List<Assistante> listerTout();
     
-    int 		compterPourCategorie( int idCategorie );
+    // int 		compterPourCategorie( int idCategorie );
 
 }

@@ -17,11 +17,10 @@
 <div id="header">
 	<h:outputText value="&nbsp;" rendered="#{not compteActif.loggedIn}" />
 	<h:form rendered="#{compteActif.loggedIn}">
-		<h:link outcome="personnes" value="Personnes" rendered="#{compteActif.utilisateur }" />
 		<h:panelGroup rendered="#{compteActif.admininstrateur}">
-			<h:link outcome="parent" value="Parent"  />
+			<h:link outcome="parent" value="Parents"  />
 			<h:link outcome="garde" value="Gardes"  />
-			<h:link outcome="catégories" value="Catégories"  />
+			<h:link outcome="assistante" value="Assistantes"  />
 			<h:link outcome="comptes" value="Comptes"  />
 		</h:panelGroup>
 		<h:commandLink action="#{compteActif.disconnect()}" value="Déconnexion"  />

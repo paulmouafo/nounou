@@ -5,28 +5,35 @@
      xmlns:f="http://java.sun.com/jsf/core"
      xmlns:ui="http://java.sun.com/jsf/facelets">>
 
-     <ui:define name="titre">Liste des catégories</ui:define>
+     <ui:define name="titre">Liste des assistantes</ui:define>
 
     <ui:define name="contenu">
 
 	<h:form>
 
 		<h:dataTable styleClass="liste" 
-			value="#{modelCategorie.liste}" var="item" 
+			value="#{modelAssistante.liste}" var="item" 
 			rowClasses="impair, pair" columnClasses="center,left,center"
 		>
 			<h:column>
 				<f:facet name="header">
 					<h:outputText value="Id" />
 				</f:facet>
-				#{item.id}
+				#{item.idAssistante}
 			</h:column>
 			
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="Libellé" />
+					<h:outputText value="Nom" />
 				</f:facet>
-				#{item.libelle}
+				#{item.nom}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Prénom" />
+				</f:facet>
+				#{item.prenom}
 			</h:column>
 			
 			<h:column>
@@ -34,12 +41,12 @@
 					<h:outputText value="Actions" />
 				</f:facet>
 				<h:button
-					outcome="formulaire?id=#{item.id}"
+					outcome="formulaire?id=#{item.idAssistante}"
 					image="#{ resource['images:modifier.png'] }"
 					title="Modifier" 
 					styleClass="image-action"
 				/>
-				<h:commandButton action="#{modelCategorie.supprimer(item)}" 
+				<h:commandButton action="#{modelAssistante.supprimer(item)}" 
 					value="Supprimer" 
 					onclick="return confirm('Confirmez-vous la suppression ?')" 
 					image="#{ resource['images:supprimer.png'] }" 
@@ -49,9 +56,7 @@
 					<f:ajax render="@form" execute="@form" />				
 				</h:commandButton>
 			</h:column>
-
 		</h:dataTable>
-		
 		<br />
 		<h:button value="Ajouter" outcome="formulaire" />
 

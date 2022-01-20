@@ -61,7 +61,7 @@ public class ModelAssistante implements Serializable {
 	
 	public String actualiserCourant() {
 		if ( courant != null ) {
-			DtoAssistante dto = serviceAssistante.retrouver( courant.getId() ); 
+			DtoAssistante dto = serviceAssistante.retrouver( courant.getIdAssistante() ); 
 			if ( dto == null ) {
 				UtilJsf.messageError( "La assistante demandée n'existe pas" );
 				return "liste";
@@ -77,7 +77,7 @@ public class ModelAssistante implements Serializable {
 	
 	public String validerMiseAJour() {
 		try {
-			if ( courant.getId() == null) {
+			if ( courant.getIdAssistante() == 0) {
 				serviceAssistante.inserer( mapper.map(courant) );
 			} else {
 				serviceAssistante.modifier( mapper.map(courant) );
@@ -92,28 +92,11 @@ public class ModelAssistante implements Serializable {
 	
 	public String supprimer( Assistante assistante ) {
 		try {
-			serviceAssistante.supprimer( assistante.getId() );
+			serviceAssistante.supprimer( assistante.getIdAssistante() );
 			liste.remove(assistante);
 			UtilJsf.messageInfo( "Suppression effectuée avec succès." );
 		} catch (ExceptionValidation e) {
 			UtilJsf.messageError( e ); 
-		}
-		return null;
-	}
-	
-	
-	public String ajouterTelephone() {
-		courant.getTelephones().add( new Telephone() );
-		return null;
-	}
-	
-	
-	public String supprimerTelephone( Telephone telephone ) {
-		for ( int i=0; i < courant.getTelephones().size(); ++i ) {
-			if ( courant.getTelephones().get(i) == telephone ) {
-				courant.getTelephones().remove( i );
-				break;
-			}
 		}
 		return null;
 	}

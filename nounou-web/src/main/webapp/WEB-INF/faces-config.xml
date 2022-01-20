@@ -9,16 +9,8 @@
    <redirect/>
   </navigation-case>
   <navigation-case>
-   <from-outcome>catégories</from-outcome>
-   <to-view-id>/pages/admin/categorie/liste.xhtml</to-view-id>
-  </navigation-case>
-  <navigation-case>
    <from-outcome>comptes</from-outcome>
    <to-view-id>/pages/admin/compte/liste.xhtml</to-view-id>
-  </navigation-case>
-  <navigation-case>
-   <from-outcome>personnes</from-outcome>
-   <to-view-id>/pages/user/personne/liste.xhtml</to-view-id>
   </navigation-case>
   <navigation-case>
    <from-outcome>info</from-outcome>
@@ -31,6 +23,10 @@
   <navigation-case>
    <from-outcome>parent</from-outcome>
    <to-view-id>/pages/admin/parent/liste.xhtml</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>assistante</from-outcome>
+   <to-view-id>/pages/admin/assistante/liste.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
  <application/>
