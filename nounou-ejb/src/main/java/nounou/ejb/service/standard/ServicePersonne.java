@@ -88,19 +88,19 @@ public class ServicePersonne implements IServicePersonne {
 			message.append("\nLe prénom est trop long.");
 		}
 
-		for (DtoTelephone telephoe : dtoPersonne.getTelephones()) {
-			if (telephoe.getLibelle() == null || telephoe.getLibelle().isEmpty()) {
-				message.append("\nLlibellé absent pour le téléphone : " + telephoe.getNumero());
-			} else if (telephoe.getLibelle().length() > 25) {
-				message.append("\nLe libellé du téléphone est trop long : " + telephoe.getLibelle());
-			}
-
-			if (telephoe.getNumero() == null || telephoe.getNumero().isEmpty()) {
-				message.append("\nNuméro absent pour le téléphone : " + telephoe.getLibelle());
-			} else if (telephoe.getNumero().length() > 25) {
-				message.append("\nLe numéro du téléphone est trop long : " + telephoe.getNumero());
-			}
-		}
+//		for (DtoTelephone telephoe : dtoPersonne.getTelephones()) {
+//			if (telephoe.getLibelle() == null || telephoe.getLibelle().isEmpty()) {
+//				message.append("\nLlibellé absent pour le téléphone : " + telephoe.getNumero());
+//			} else if (telephoe.getLibelle().length() > 25) {
+//				message.append("\nLe libellé du téléphone est trop long : " + telephoe.getLibelle());
+//			}
+//
+//			if (telephoe.getNumero() == null || telephoe.getNumero().isEmpty()) {
+//				message.append("\nNuméro absent pour le téléphone : " + telephoe.getLibelle());
+//			} else if (telephoe.getNumero().length() > 25) {
+//				message.append("\nLe numéro du téléphone est trop long : " + telephoe.getNumero());
+//			}
+//		}
 
 		if (message.length() > 0) {
 			throw new ExceptionValidation(message.toString().substring(1));

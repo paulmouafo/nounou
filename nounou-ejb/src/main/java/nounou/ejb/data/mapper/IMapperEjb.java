@@ -1,6 +1,6 @@
 package nounou.ejb.data.mapper;
 
-import org.mapstruct.AfterMapping;
+import org.mapstruct.AfterMapping; 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
@@ -9,11 +9,13 @@ import org.mapstruct.factory.Mappers;
 import nounou.commun.dto.DtoCategorie;
 import nounou.commun.dto.DtoCompte;
 import nounou.commun.dto.DtoGarde;
+import nounou.commun.dto.DtoParent;
 import nounou.commun.dto.DtoPersonne;
 import nounou.commun.dto.DtoTelephone;
 import nounou.ejb.data.Categorie;
 import nounou.ejb.data.Compte;
 import nounou.ejb.data.Garde;
+import nounou.ejb.data.Parent;
 import nounou.ejb.data.Personne;
 import nounou.ejb.data.Telephone;
 
@@ -23,11 +25,27 @@ public interface IMapperEjb {
 	static final IMapperEjb INSTANCE = Mappers.getMapper(IMapperEjb.class);
 
 	// Compte
+	
+	Compte map( DtoCompte source );
+	
+	DtoCompte map( Compte source );
+	
 
-	Compte map(DtoCompte source);
+	// Parent
 
-	DtoCompte map(Compte source);
+	Parent map( DtoParent source );
+	
+	DtoParent map( Parent source );
 
+    // Garde 
+    
+	Garde map(DtoGarde dtoGarde);
+
+	DtoGarde mapMinimal(Garde garde);
+
+	DtoGarde map(Garde garde);
+	
+	
 	// Categorie
 
 	Categorie map(DtoCategorie source);
@@ -35,15 +53,17 @@ public interface IMapperEjb {
 	DtoCategorie map(Categorie source);
 
 	// Personne
+	
+	DtoPersonne mapMinimal( Personne source );
+	
+	Personne map( DtoPersonne source );
+	
+	DtoPersonne map( Personne source );
 
-	Personne map(DtoPersonne source);
-
-	DtoPersonne map(Personne source);
-
-	@Mapping(target = "categorie", ignore = true)
-	@Mapping(target = "telephones", ignore = true)
-	DtoPersonne mapMinimal(Personne source);
-
+	
+//	@Mapping( target="categorie", ignore = true )
+//	@Mapping( target="telephones", ignore = true )
+	
 	// Telephone
 
 	@Mapping(target = "personne", ignore = true)
@@ -60,10 +80,6 @@ public interface IMapperEjb {
         }
     }
 
-	Garde map(DtoGarde dtoGarde);
-
-	DtoGarde mapMinimal(Garde garde);
-
-	DtoGarde map(Garde garde);	
+	DtoParent mapMinimal(Parent parent);	
 	
 }

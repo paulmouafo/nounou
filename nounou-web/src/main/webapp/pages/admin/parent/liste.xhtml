@@ -5,43 +5,38 @@
      xmlns:f="http://java.sun.com/jsf/core"
      xmlns:ui="http://java.sun.com/jsf/facelets">>
 
-     <ui:define name="titre">Liste des parent</ui:define>
+     <ui:define name="titre">Liste des gardes</ui:define>
 
     <ui:define name="contenu">
 
 	<h:form>
 
 		<h:dataTable styleClass="liste" 
-			value="#{modelParent.liste}" var="item" 
+			value="#{modelGarde.liste}" var="item" 
 			rowClasses="impair, pair" columnClasses="center,left,center"
 		>
 			<h:column>
 				<f:facet name="header">
 					<h:outputText value="Id" />
 				</f:facet>
-				#{item.idParent}
+				#{item.date}
 			</h:column>
 			
 			<h:column>
 				<f:facet name="header">
 					<h:outputText value="Nom" />
 				</f:facet>
-				#{item.nom} #{item.prenom}
+				#{item.heureArrive}
 			</h:column>
 			
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="Adresse" />
+					<h:outputText value="Nom" />
 				</f:facet>
-				#{item.adresse}
+				#{item.heureDepart}
 			</h:column>
 			
-			<h:column>
-				<f:facet name="header">
-					<h:outputText value="Telephone" />
-				</f:facet>
-				#{item.telephones}
-			</h:column>
+			<h:selectBooleanCheckbox value="#{item.repas}"> </h:selectBooleanCheckbox>
 			
 			<h:column>
 				<f:facet name="header">
@@ -53,7 +48,7 @@
 					title="Modifier" 
 					styleClass="image-action"
 				/>
-				<h:commandButton action="#{modelParent.supprimer(item)}" 
+				<h:commandButton action="#{modelGarde.supprimer(item)}" 
 					value="Supprimer" 
 					onclick="return confirm('Confirmez-vous la suppression ?')" 
 					image="#{ resource['images:supprimer.png'] }" 

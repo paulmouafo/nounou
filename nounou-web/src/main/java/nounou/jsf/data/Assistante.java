@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import java.util.Objects;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -11,12 +12,12 @@ import javax.validation.constraints.Size;
 
 
 @SuppressWarnings("serial")
-public class Parent implements Serializable {
+public class Assistante implements Serializable {
 
 
 	// Champs
 	
-	private Integer			idParent;
+	private Integer			idAssistante;
 	
 	@NotBlank( message = "Le nom doit être renseigné")
 	@Size(max=25, message = "Valeur trop longue pour le nom : 25 car. maxi" )
@@ -26,40 +27,40 @@ public class Parent implements Serializable {
 	@Size(max=25, message = "Valeur trop longue pour le prenom : 25 car. maxi" )
 	private String			prenom;
 
-	
-	@NotBlank( message = "L'adresse doit être renseigné")
-	private String		adresse;
+	@NotBlank( message = "L'adresse e-mail doit être renseigné")
+	@Size(max=100, message = "Valeur trop longue pour l'adresse e-mail : 100 car. maxi" )
+	@Email( message = "Adresse e-mail invalide" )
+	private String		email;
 
-	@NotBlank
+	@NotBlank( message = "Le téléphone doit être renseigné")
 	private int	telephones ;
 	
 	
 
-	public Parent() {
-		
+	public Assistante() {		
 	}
 
 
 
-	public Parent(Integer idParent, String nom, String prenom, String adresse, int telephones) {
+	public Assistante(Integer idAssistante,String nom,String prenom,String email,int telephones) {
 		super();
-		this.idParent = idParent;
+		this.idAssistante = idAssistante;
 		this.nom = nom;
 		this.prenom = prenom;
-		this.adresse = adresse;
+		this.email = email;
 		this.telephones = telephones;
 	}
 
 
 
-	public Integer getIdParent() {
-		return idParent;
+	public Integer getIdAssistante() {
+		return idAssistante;
 	}
 
 
 
-	public void setIdParent(Integer idParent) {
-		this.idParent = idParent;
+	public void setIdAssistante(Integer idAssistante) {
+		this.idAssistante = idAssistante;
 	}
 
 
@@ -88,14 +89,14 @@ public class Parent implements Serializable {
 
 
 
-	public String getAdresse() {
-		return adresse;
+	public String getEmail() {
+		return email;
 	}
 
 
 
-	public void setAdresse(String adresse) {
-		this.adresse = adresse;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 
@@ -114,7 +115,7 @@ public class Parent implements Serializable {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(idParent);
+		return Objects.hash(idAssistante);
 	}
 
 
@@ -127,10 +128,17 @@ public class Parent implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Parent other = (Parent) obj;
-		return Objects.equals(idParent, other.idParent);
+		Assistante other = (Assistante) obj;
+		return Objects.equals(idAssistante, other.idAssistante);
 	}
 	
 	
+	
+
+
+
+
+
+
 
 }

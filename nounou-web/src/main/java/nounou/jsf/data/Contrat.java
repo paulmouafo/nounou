@@ -1,99 +1,153 @@
 package nounou.jsf.data;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 import java.util.Objects;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
 
 @SuppressWarnings("serial")
 public class Contrat implements Serializable {
 
-
 	// Champs
-	
-	private Integer			id;
-	
-	@NotBlank( message = "Le nom doit être renseigné")
-	@Size(max=25, message = "Valeur trop longue pour le nom : 25 car. maxi" )
-	private String			nom;
+	private Integer idContrat;
 
-	@NotBlank( message = "Le prénom doit être renseigné")
-	@Size(max=25, message = "Valeur trop longue pour le prénom : 25 car. maxi" )
-	private String			prenom;
+	private String nomEnfant;
+	private String prenomEnfant;
+	private Date dateDeNaissance;
+	private Date dateDeDebut;
+	private Date dateDeFin;
+	private float tarifHoraire;
+	private float indemniteDentretien;
+	private float indemniteDeRepas;
+	private int idParent;
+	private int idGarde;
+	private int idAssistante;
 
-	@NotNull( message = "La catégorie est obligatoire")
-	private Categorie		categorie;
-
-	private List<Telephone>	telephones = new ArrayList<>();
-
-	
-	// Constructeurs
-	
 	public Contrat() {
+
 	}
 
-	public Contrat(Integer id, String nom, String prenom, Categorie categorie) {
+	public Contrat(Integer idContrat, String nomEnfant, String prenomEnfant, Date dateDeNaissance, Date dateDeDebut,
+			Date dateDeFin, float tarifHoraire, float indemniteDentretien, float indemniteDeRepas, int idParent,
+			int idGarde, int idAssistante) {
 		super();
-		this.id = id;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.categorie = categorie;
-	}
-	
-	
-	// Getters & setters
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
+		this.idContrat = idContrat;
+		this.nomEnfant = nomEnfant;
+		this.prenomEnfant = prenomEnfant;
+		this.dateDeNaissance = dateDeNaissance;
+		this.dateDeDebut = dateDeDebut;
+		this.dateDeFin = dateDeFin;
+		this.tarifHoraire = tarifHoraire;
+		this.indemniteDentretien = indemniteDentretien;
+		this.indemniteDeRepas = indemniteDeRepas;
+		this.idParent = idParent;
+		this.idGarde = idGarde;
+		this.idAssistante = idAssistante;
 	}
 
-	public String getNom() {
-		return nom;
+	public Integer getIdContrat() {
+		return idContrat;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setIdContrat(Integer idContrat) {
+		this.idContrat = idContrat;
 	}
 
-	public String getPrenom() {
-		return prenom;
+	public String getNomEnfant() {
+		return nomEnfant;
 	}
 
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+	public void setNomEnfant(String nomEnfant) {
+		this.nomEnfant = nomEnfant;
 	}
 
-	public Categorie getCategorie() {
-		return categorie;
+	public String getPrenomEnfant() {
+		return prenomEnfant;
 	}
 
-	public void setCategorie(Categorie categorie) {
-		this.categorie = categorie;
+	public void setPrenomEnfant(String prenomEnfant) {
+		this.prenomEnfant = prenomEnfant;
 	}
 
-	public List<Telephone> getTelephones() {
-		return telephones;
+	public Date getDateDeNaissance() {
+		return dateDeNaissance;
 	}
 
-	public void setTelephones(List<Telephone> telephones) {
-		this.telephones = telephones;
+	public void setDateDeNaissance(Date dateDeNaissance) {
+		this.dateDeNaissance = dateDeNaissance;
 	}
 
-	
-	// hashCode() & equals()
+	public Date getDateDeDebut() {
+		return dateDeDebut;
+	}
+
+	public void setDateDeDebut(Date dateDeDebut) {
+		this.dateDeDebut = dateDeDebut;
+	}
+
+	public Date getDateDeFin() {
+		return dateDeFin;
+	}
+
+	public void setDateDeFin(Date dateDeFin) {
+		this.dateDeFin = dateDeFin;
+	}
+
+	public float getTarifHoraire() {
+		return tarifHoraire;
+	}
+
+	public void setTarifHoraire(float tarifHoraire) {
+		this.tarifHoraire = tarifHoraire;
+	}
+
+	public float getIndemniteDentretien() {
+		return indemniteDentretien;
+	}
+
+	public void setIndemniteDentretien(float indemniteDentretien) {
+		this.indemniteDentretien = indemniteDentretien;
+	}
+
+	public float getIndemniteDeRepas() {
+		return indemniteDeRepas;
+	}
+
+	public void setIndemniteDeRepas(float indemniteDeRepas) {
+		this.indemniteDeRepas = indemniteDeRepas;
+	}
+
+	public int getIdParent() {
+		return idParent;
+	}
+
+	public void setIdParent(int idParent) {
+		this.idParent = idParent;
+	}
+
+	public int getIdGarde() {
+		return idGarde;
+	}
+
+	public void setIdGarde(int idGarde) {
+		this.idGarde = idGarde;
+	}
+
+	public int getIdAssistante() {
+		return idAssistante;
+	}
+
+	public void setIdAssistante(int idAssistante) {
+		this.idAssistante = idAssistante;
+	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id);
+		return Objects.hash(dateDeDebut, dateDeFin, dateDeNaissance, idAssistante, idContrat, idGarde, idParent,
+				indemniteDeRepas, indemniteDentretien, nomEnfant, prenomEnfant, tarifHoraire);
 	}
 
 	@Override
@@ -104,9 +158,14 @@ public class Contrat implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		var other = (Contrat) obj;
-		return Objects.equals(id, other.id);
+		Contrat other = (Contrat) obj;
+		return Objects.equals(dateDeDebut, other.dateDeDebut) && Objects.equals(dateDeFin, other.dateDeFin)
+				&& Objects.equals(dateDeNaissance, other.dateDeNaissance) && idAssistante == other.idAssistante
+				&& Objects.equals(idContrat, other.idContrat) && idGarde == other.idGarde && idParent == other.idParent
+				&& Float.floatToIntBits(indemniteDeRepas) == Float.floatToIntBits(other.indemniteDeRepas)
+				&& Float.floatToIntBits(indemniteDentretien) == Float.floatToIntBits(other.indemniteDentretien)
+				&& Objects.equals(nomEnfant, other.nomEnfant) && Objects.equals(prenomEnfant, other.prenomEnfant)
+				&& Float.floatToIntBits(tarifHoraire) == Float.floatToIntBits(other.tarifHoraire);
 	}
-	
 
 }

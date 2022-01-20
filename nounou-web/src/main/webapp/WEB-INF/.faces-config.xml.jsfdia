@@ -24,6 +24,9 @@
    <PROCESS-ITEM-OUTPUT ID="garde::#pages#admin#garde#liste.xhtml"
     NAME="output5" PATH="/pages/admin/garde/liste.xhtml"
     TARGET="rules:#pages#admin#garde#liste.xhtml" TITLE="garde" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="parent::#pages#admin#parent#liste.xhtml"
+    NAME="output6" PATH="/pages/admin/parent/liste.xhtml"
+    TARGET="rules:#pages#admin#parent#liste.xhtml" TITLE="parent" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#connexion.xhtml" PATH="/connexion.xhtml"
@@ -36,5 +39,8 @@
   SHAPE="312,240,50,25" model-entity="JSFProcessGroup" persistent="true"/>
  <PROCESS-ITEM NAME="rules:#pages#admin#garde#liste.xhtml"
   PATH="/pages/admin/garde/liste.xhtml" SHAPE="322,314,0,0"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#pages#admin#parent#liste.xhtml"
+  PATH="/pages/admin/parent/liste.xhtml" SHAPE="325,378,0,0"
   model-entity="JSFProcessGroup" persistent="true"/>
 </PROCESS>

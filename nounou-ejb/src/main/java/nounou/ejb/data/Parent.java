@@ -1,37 +1,31 @@
-package nounou.jsf.data;
+package nounou.ejb.data;
 
-import java.io.Serializable;
+import java.io.Serializable; 
 
 import java.util.Objects;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
-
-
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 
 @SuppressWarnings("serial")
-public class Parent implements Serializable {
+@Entity
+public class Parent {
 
 
 	// Champs
+	@Id
+	private int			idParent;
 	
-	private Integer			idParent;
-	
-	@NotBlank( message = "Le nom doit être renseigné")
-	@Size(max=25, message = "Valeur trop longue pour le nom : 25 car. maxi" )
 	private String			nom;
 
-	@NotBlank( message = "Le prenom doit être renseigné")
-	@Size(max=25, message = "Valeur trop longue pour le prenom : 25 car. maxi" )
 	private String			prenom;
 
-	
-	@NotBlank( message = "L'adresse doit être renseigné")
 	private String		adresse;
-
-	@NotBlank
+	
 	private int	telephones ;
+	
+	// private Compte compte;
 	
 	
 

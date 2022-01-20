@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition template="/template/page-standard.xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:ui="http://java.sun.com/jsf/facelets">>
+
+	<f:metadata>
+		<f:viewParam name="id" value="#{modelGarde.courant.id}" />
+		<f:viewAction action="#{modelGarde.actualiserCourant()}" />
+	</f:metadata>
+
+    <ui:define name="titre">Garde</ui:define>
+
+    <ui:define name="contenu">
+	
+	<h:form>
+		<table class="form">
+			<tr>
+				<td>
+					<h:outputLabel for="id">Id :</h:outputLabel>				
+				</td>
+				<td>
+					<h:inputText id="id" size="5" readonly="true"
+						value="#{modelGarde.courant.id}" />
+					<br /><h:message for="id" errorClass="error"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:outputLabel for="date">Date :</h:outputLabel>				
+				</td>
+				<td>				
+					<h:inputText id="date" size="25" 
+						value="#{modelGarde.courant.date}" />
+					<br /><h:message for="date" errorClass="error"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:outputLabel for="heureArrive">Heure d'arrivée :</h:outputLabel>				
+				</td>
+				<td>				
+					<h:inputText id="heureArrive" size="25" 
+						value="#{modelGarde.courant.heureArrive}" />
+					<br /><h:message for="heureArrive" errorClass="error"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:outputLabel for="heureDepart">Heure de départ :</h:outputLabel>				
+				</td>
+				<td>
+					<h:inputText id="heureDepart" size="25" 
+						value="#{modelGarde.courant.heureDepart}" />
+					<br /><h:message for="heureDepart" errorClass="error"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:outputLabel for="repas">Repas :</h:outputLabel>				
+				</td>
+				<td>
+					<h:selectBooleanCheckbox value="#{modelGarde.courant.repas}"> </h:selectBooleanCheckbox>
+				</td>
+			</tr>
+			
+		</table>
+		
+
+		<br /> 
+		<!-- <h:commandButton value="Ajouter garde" 
+			action="#{modelGarde.ajouterTelephone()}" >
+			<f:ajax render="tableTelephones" execute="tableTelephones" />
+		</h:commandButton> -->
+		<h:commandButton value="Valider" 
+			action="#{modelGarde.validerMiseAJour()}">
+		</h:commandButton>
+		<h:button value="Retour" outcome="gardes" />
+	</h:form>
+
+	</ui:define>
+
+</ui:composition>
