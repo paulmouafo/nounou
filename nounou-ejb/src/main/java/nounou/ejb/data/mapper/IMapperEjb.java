@@ -6,12 +6,14 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
+import nounou.commun.dto.DtoAssistante;
 import nounou.commun.dto.DtoCategorie;
 import nounou.commun.dto.DtoCompte;
 import nounou.commun.dto.DtoGarde;
 import nounou.commun.dto.DtoParent;
 import nounou.commun.dto.DtoPersonne;
 import nounou.commun.dto.DtoTelephone;
+import nounou.ejb.data.Assistante;
 import nounou.ejb.data.Categorie;
 import nounou.ejb.data.Compte;
 import nounou.ejb.data.Garde;
@@ -85,5 +87,10 @@ public interface IMapperEjb {
     }
 
 	DtoParent mapMinimal(Parent parent);	
+	Assistante map(DtoAssistante dtoAssistante);
+
+	DtoAssistante map(Assistante assistante);
+
+	DtoAssistante mapMinimal(Assistante assistante);	
 	
 }
